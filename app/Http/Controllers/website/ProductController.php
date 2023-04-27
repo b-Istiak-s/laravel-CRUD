@@ -12,6 +12,11 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
+    
+    // if API requires API key then add a header after Http 
+    //Http::withHeaders([
+    //      'Authorization' => 'Bearer your_api_key_here',
+    // ])->
     public function index()
     {
         $products = Product::latest()->paginate(5);
